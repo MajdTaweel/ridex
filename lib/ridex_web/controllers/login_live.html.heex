@@ -1,0 +1,7 @@
+<form phx-change="changed" onkeydown="return event.key != 'Enter';">
+  <p>Welcome to Ridex! Please check in using your phone number</p>
+  <input type="text" name="phone" placeholder="Phone number" />
+
+  <button type="button" phx-click="login" phx-value-type="driver">Login as driver</button>
+  <button type="button" phx-clixk="login" phx-value-type="rider">Login as rider</button>
+</form>

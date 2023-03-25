@@ -1,0 +1,24 @@
+<div>
+  Logged in as <%= @user.type %>
+  <div id="map" class="h-[180px]"></div>
+</div>
+
+<script>
+  var map = L.map('map');
+  var marker = undefined;
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  navigator.geolocation.getCurrentPosition(({ coords }) => {
+    if (marker) {
+
+    } else {
+      marker = L.marker([coords.latitude, coords.longitude]).addTo(map);
+    }
+      map.setView([coords.latitude, coords.longitude], 15)
+    }
+  );
+</script>

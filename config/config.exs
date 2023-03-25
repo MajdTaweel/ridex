@@ -7,6 +7,12 @@
 # General application configuration
 import Config
 
+config :ridex, Ridex.Guardian,
+       issuer: "ridex",
+       # You can generate a secret using `mix guardian.gen.secret`
+       # as explained here: https://github.com/ueberauth/guardian#installation
+       secret_key: "qZpB19ixi+L2MxjDMCJB0fuWUsq0LezLF7z63yR7nC0rJZZ+RI2FQDS7fDvMsGoO"
+
 config :ridex,
   ecto_repos: [Ridex.Repo]
 
